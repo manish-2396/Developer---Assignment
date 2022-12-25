@@ -25,9 +25,7 @@ const Home = () => {
   function handleDelate() {
     if (data.length > 0) {
       swal("All Exists User Data Deleted", "", "error");
-      setTimeout(() => {
-        dispatch(deleteData());
-      }, 3000);
+      dispatch(deleteData());
     }
   }
 

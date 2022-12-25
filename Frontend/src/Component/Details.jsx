@@ -88,9 +88,9 @@ const Details = () => {
   }
 
   return (
-    <Box width="95%" m="auto">
-      <Button>
-        <Link to="/" style={{ TextDecoder: "none" }}>
+    <Box width="95%" m="auto" mt="2rem">
+      <Button variant="contained" >
+        <Link to="/" style={{textDecoration:"none" , color:"#fff"}}>
           Back to Home
         </Link>
       </Button>
