@@ -10,7 +10,6 @@ import React, { useEffect } from "react";
 import {
   Avatar,
   Box,
-  Button,
   FormControl,
   InputLabel,
   MenuItem,
@@ -20,7 +19,6 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { Stack } from "@mui/system";
-import { Link } from "react-router-dom";
 import { getData } from "../Redux/action";
 
 const Details = () => {
@@ -89,11 +87,6 @@ const Details = () => {
 
   return (
     <Box width="95%" m="auto" mt="2rem">
-      <Button variant="contained" >
-        <Link to="/" style={{textDecoration:"none" , color:"#fff"}}>
-          Back to Home
-        </Link>
-      </Button>
       <Box m="1rem">
         <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
           <InputLabel id="demo-simple-select-label">Gender</InputLabel>
