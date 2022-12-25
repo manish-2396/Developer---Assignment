@@ -176,7 +176,7 @@ const Details = () => {
                 page={page}
                 defaultPage={1}
                 onChange={handlePagination}
-                siblingCount={0}
+                siblingCount={3}
               />
             </Stack>
           </Box>

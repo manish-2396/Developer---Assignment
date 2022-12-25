@@ -1,5 +1,4 @@
 import * as types from "./actionType";
-import swal from "sweetalert";
 
 let url = "https://developer-assignment-production.up.railway.app";
 
@@ -30,7 +29,6 @@ const fetchData3 = (data) => (dispatch) => {
   })
     .then((res) => res.json())
     .then((res) => {
-      swal("User Data Added to database", "", "success");
       dispatch(getData());
     });
 };
