@@ -1,4 +1,5 @@
 import * as types from "./actionType";
+import swal from "sweetalert";
 
 
 let url = "https://developer-assignment-production.up.railway.app"
@@ -8,8 +9,7 @@ export const getData = () => (dispatch) => {
   fetch(`https://developer-assignment-production.up.railway.app/get`)
     .then((res) => res.json())
     .then((res) => {
-      console.log(res)
-      dispatch({ type: types.GET_DATA_SUCCUCS, payload: res })
+      dispatch({ type: types.GET_DATA_SUCCUCS, payload: res.data })
     })
     .catch((err) => dispatch({ type: types.GET_DATA_FAILUER }));
 };
@@ -30,7 +30,10 @@ const fetchData3 = (data) => (dispatch) => {
     body: JSON.stringify(data),
   })
     .then((res) => res.json())
-    .then((res) => dispatch(getData()));
+    .then((res) => {
+      swal("User Data Added to database", "", "success");
+      dispatch(getData())
+    });
 };
 
 const fetchData2 = (Data) => (dispatch) => {
