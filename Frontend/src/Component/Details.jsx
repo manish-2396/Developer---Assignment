@@ -75,7 +75,16 @@ const Details = () => {
   };
 
   if (isLoading) {
-    return <Box fontFamily="sans-serif" fontSize="1.5rem" textAlign="center" m="5rem">Loading...</Box>;
+    return (
+      <Box
+        fontFamily="sans-serif"
+        fontSize="1.5rem"
+        textAlign="center"
+        m="5rem"
+      >
+        Loading...
+      </Box>
+    );
   }
 
   return (

@@ -1,15 +1,14 @@
 import * as types from "./actionType";
 import swal from "sweetalert";
 
-
-let url = "https://developer-assignment-production.up.railway.app"
+let url = "https://developer-assignment-production.up.railway.app";
 
 export const getData = () => (dispatch) => {
   dispatch({ type: types.GET_DATA_REQUEST });
-  fetch(`https://developer-assignment-production.up.railway.app/get`)
+  fetch(`${url}/get`)
     .then((res) => res.json())
     .then((res) => {
-      dispatch({ type: types.GET_DATA_SUCCUCS, payload: res.data })
+      dispatch({ type: types.GET_DATA_SUCCUCS, payload: res.data });
     })
     .catch((err) => dispatch({ type: types.GET_DATA_FAILUER }));
 };
@@ -32,7 +31,7 @@ const fetchData3 = (data) => (dispatch) => {
     .then((res) => res.json())
     .then((res) => {
       swal("User Data Added to database", "", "success");
-      dispatch(getData())
+      dispatch(getData());
     });
 };
 
@@ -46,7 +45,7 @@ const fetchData2 = (Data) => (dispatch) => {
       img: data.picture.thumbnail,
       gender: data.gender,
       phone: data.phone,
-      country: data.location.country
+      country: data.location.country,
     };
     postData.push(payload);
   });
