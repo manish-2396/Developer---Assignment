@@ -1,13 +1,16 @@
 import * as types from "./actionType";
 
 
-let url = "http://localhost:8000"
+let url = "https://developer-assignment-production.up.railway.app"
 
 export const getData = () => (dispatch) => {
   dispatch({ type: types.GET_DATA_REQUEST });
-  fetch(`${url}/get`)
+  fetch(`https://developer-assignment-production.up.railway.app/get`)
     .then((res) => res.json())
-    .then((res) => dispatch({ type: types.GET_DATA_SUCCUCS, payload: res }))
+    .then((res) => {
+      console.log(res)
+      dispatch({ type: types.GET_DATA_SUCCUCS, payload: res })
+    })
     .catch((err) => dispatch({ type: types.GET_DATA_FAILUER }));
 };
 
